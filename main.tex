@@ -1,0 +1,321 @@
+\documentclass[twocolumn]{aastex62}
+                   
+\usepackage{apjfonts}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{amsmath,amstext}
+\usepackage{hyperref}
+\usepackage{natbib}
+
+
+
+
+
+\begin{document}
+
+\title{GIANT PLANET SWAPS DURING CLOSE STELLAR ENCOUNTERS}
+
+\author{Yi-Han Wang}
+\affiliation{Department of Physics and Astronomy, Stony Brook University, Stony Brook, NY, 11794, USA}
+
+\author{Rosalba Perna}
+\affiliation{Department of Physics and Astronomy, Stony Brook University, Stony Brook, NY, 11794, USA}
+\affiliation{Center for Computational Astrophysics, Flatiron Institute, 162 5th Avenue, New York, NY 10010, \
+USA}
+
+
+\author{Nathan W. C. Leigh}
+\affiliation{Departamento de Astronom\'ia, Facultad de Ciencias F\'isicas y Matem\'aticas,
+Universidad de Concepci\'on, Concepci\'on, Chile}
+\affiliation{Department of Astrophysics, American Museum of Natural History, Central Park West and 79th Street, New York, NY 10024}
+
+
+
+
+\begin{abstract}
+    The discovery of planetary systems outside of the solar system has
+challenged some of the tenets of planetary formation. Among the
+difficult-to-explain observations, are systems with a giant planet
+orbiting a very-low mass star, such as the recently discovered GJ~3512b
+planetary system, where a Jupiter-like planet orbits an $M$-star in a
+tight and eccentric orbit.  Systems such as this one are not predicted
+by the core accretion theory of planet formation.  Here we suggest a
+novel mechanism, in which the giant planet is born around a more
+typical Sun-like star ($M_{*,1}$), but is subsequently exchanged
+during a dynamical interaction with a flyby low-mass star ($M_{*,2}$).
+We perform state-of-the-art $N$-body simulations with
+$M_{*,1}=1M_\odot$ and $M_{*,2}=0.1M_\odot$ to study the statistical
+outcomes of this interaction, and show that exchanges result in high
+eccentricities for the new orbit around the low-mass star, while about
+half of the outcomes result in tighter orbits than the planet had
+around its birth star.  We numerically compute the cross section for
+planet exchange, and show that  an upper limit for the probability per system to have
+undergone such an event in a Hubble time is $\Gamma\sim 0.1
+(n_*/1000\,{\rm pc}^{-3})(a_p/{\rm AU})  (v_\infty/1\,{\rm km}\,{\rm s}^{-1})^{-1}$, where $a_p$ is the planet semi-major axis around the birth star, 
+$v_\infty$  the relative velocity of the stars at infinity, and $n_*$ the local number
+density of stars. Hence these planet exchanges could be relatively common for stars born in open clusters and groups, should already be observed in the exoplanet database, and provide new avenues to create unexpected planetary architectures.
+\end{abstract}
+
+
+
+\section{Introduction}
+
+The discovery of several thousands of exoplanetary systems
+has clearly shown that planetary architectures are
+considerably more varied than originally thought \citep{Bathala2013}, and
+that planet formation models built to explain our
+own solar system fall often short of explaining
+features and patterns observed in other worlds.
+
+Among the unexpected findings is the recent
+discovery of a giant planet orbiting a very-low-mass
+star \citep{Morales2019}, the M dwarf GJ 3512b, with a mass of $0.12\,M_\odot$.
+The planet, of minimum mass $M_p\sin =0.463M_{\rm Jup}$, 
+is on an eccentric (eccentricity $e=0.435$) and
+tight orbit (semi-major axis $a_J=0.338$~AU).
+
+The discovery of this system is not unique in the current exoplanet set: a giant planet of mass $M_p=0.63 M_{\rm Jup}$ 
+orbiting a very low mass host (a brown dwarf of mass $M=0.06 M_\odot$) was discovered in the microlensing event MOA-bin-29 \citep{Kondo2019}, and systems of this kind were reported since the early days of planet observations \citep{Delfosse1998}.
+
+Planetary systems like these ones pose a serious challenge to the standard core accretion theory of planet formation \citep{Mizuno1980,
+Bodenheimer1986,
+Laughlin2004}.
+It has in fact been shown \citep{Laughlin2004} that the formation of Jupiter-mass planets orbiting $M$-dwarf stars is highly inhibited at all radial locations, in stark contrast to solar-type stars. 
+%NL: Out of curiosity, why is this inhibited?  
+More recent work \citep{Miguel2019} further confirmed that in the planetesimal accretion scenario a system like GJ~3512b cannot be formed.
+\citet{Morales2019} further showed that the pebble accretion theory \citep{Johansen2019} also fails in explaining the configuration of this planetary  system. According to the pebble theory, giant planets accrete upon the formation of a core of at least 5 Earth masses. However, in a system with a low-mass star, migration is high and prevents the core to grow to much large sizes.
+
+A possible explanation of systems like GJ~3512b, if its evolution has
+proceeded completely in isolation, involves the onset of the
+gravitational instability in the early phases of planet formation,
+when the proto-planetary disk was still relatively massive
+\citep{Lodato2005,Boss2006,Morales2019}. However, for typical values of the disk-viscosity,
+fragmentation occurs in the outer parts of the disk, on the order of
+tens of AU.  Hence this model also requires substantial migration to
+have occurred. High eccentricities are not naturally predicted
+via this mechanism.
+
+Here we propose a novel model to explain the properties of GJ~3512,
+motivated by the fact that many (if not most) stars are born within
+OB associations or in star clusters \citep{Clarke2000,
+Lada2003}. Even for the solar system, studies of the abundances of isotopes have
+led to the suggestion that it used to be part of a star cluster \citep{Adams2001}.  Clusters are
+generally thought to dissolve within 20-50~Myr; however, in the absence of external perturbations, they can be long-lived \citep{deGrijs2009}; and in fact, long-lived clusters are known
+to exist (e.g.  the Hyades and Presepe are about 600 Myr old, NGC 6811 is about 1 Gyr, NGC 6819 is about 2.5 Gyr, etc.;  \citealt{Meibom2015,meibom18}).
+
+
+A number of studies (e.g.  \citealt{Heggie1996,Laughlin1998, Davies2001,Bonnell2001,Thies2005,Olczak2010,Chatterjee2012,Portegies2015,
+Cai2017,Cai2018,Rice2018,Cai2019,
+vanelteren2019, Flammini2019,Kremer2019}) have shown how the evolution of planetary systems in
+interacting environments may  provide alternative
+formation paths for planet properties which are difficult to account for
+by current theories of planetary formation. For example, dynamical
+interactions may have played a role in producing 
+eccentric planetary orbits \citep{DelaFuente1997}, in 
+altering the distribution of mutual inclinations \citep{Boley2012}, in shrinking the orbits of giants leading
+to hot Jupiters \citep{Shara2016,Hamers2017}, or in creating free-floating planets which, upon
+capture, reside on very wide orbits \citep{Perets2012}.
+
+Here we suggest a novel dynamical explanation to create a system such
+as GJ~3512b: the giant planet was originally born around a typical,
+Sun-like ($G$) star. However, during its lifetime, a flyby by a
+low-mass ($M$) star resulted in the planet being swapped between the
+two stars. 
+We note that, given the relatively high abundance of low-mass stars compared to solar-type ones \citep{Scalo1979}, a scenario in which a 'solar-type' planetary system is perturbed by a flyby of a low-mass star is the most common one to happen \citep{leigh12,leigh15}.
+
+
+
+We perform highly-accurate $N$-body simulations to study
+the frequency of this planet exchange from the $G$ to the $M$ star, as
+well as the properties of the resulting planet and planet+star system.
+We find that, for stars born in associations, the rate of this special
+dynamical interaction is consistent with a handful of systems in the
+current exoplanet set. The high eccentricity is naturally explained
+via this mechanism, and tighter orbits than what the planet had
+around its birth star are found in about half of the exchanges.
+
+Our paper is organized as follows: Sec~2 describes the computation of the cross-section for the planet exchange, 
+and hence the rate for this dynamical mechanism. We hence present (Sec.~3) the 
+properties of the planetary system formed after the swap, and discuss them in the context of GJ~3512b. We summarize and conclude in Sec~4.
+
+\begin{figure}
+ \includegraphics[width=1\columnwidth]{letter-fitting}
+  \caption{Results from numerical experiments and their best fit. Left: Cross section for exchange of a giant planet from an $1M_\odot$ star to a $0.1M_\odot$ one, for an initial orbital separation $a_p=1$~AU.  Right: Dependence of the cross-section for exchange on the initial planet separation $a_p$. } 
+ \label{fig:fitting}
+\end{figure}
+
+\section{Cross section for planet exchange}
+
+The rate for planet exchange is given by
+\begin{equation}
+\Gamma_{\rm ex} \sim \sigma_{\rm ex} n_* \bar{v}\,,
+\end{equation}
+where $\sigma_{\rm ex}$ is the cross-section for this mechanism, $n_*$ is the number density of stars in the environment under consideration, and $\bar{v}$ is the typical mean relative velocity in that environment.
+
+In order to compute the cross section, we perform 
+numerical scattering experiments with the very high precision few-body code {\tt SpaceHub} (details in \citealt{Wang2018,Wang2019}). The code implements cutting edge chain-regularization \citep{Mikkola1993} and positive round-off error compensation in order to treat the high mass ratio of the star-planet systems that with traditional integrators often result in inaccurate results.
+
+
+
+
+The cross section is calculated as a function of $M_{*,1}$, $M_{*,2}$, $M_p$, $a_p$ and $V_\infty$, where $M_{*,1}$ is the mass of the $G$-type star that initially hosts the planet, $M_{*,2}$ is the mass of the $M$-type star that dynamically interacts with the $G$ star, $M_p$ is the mass of the planet whose original semi-major axis is $a_p$, and $v_\infty$ is the relative velocity at infinity (prior to the scattering) between the centre of mass of the $G$-type star-planet system and the $M$ star.
+
+\begin{figure}
+ \includegraphics[width=0.9\columnwidth]{letter-rate}
+  \caption{Rate of planet exchanges for the cross section in Fig.\ref{fig:fitting} and several values of the local star density.}
+ \label{fig:rate}
+\end{figure}
+
+For each set of values for $M_{*,1}$, $M_{*,2}$, $M_p$, $a_p$ and $v_\infty$, we perform 
+one million scattering experiments between the $G$- star/planet system and the flyby $M$-star. The initial phase parameters of the planet orbit are isothermally distributed, i.e. $\cos(i)$ 
+($i$ is the orbital inclination)
+is uniformly distributed within $[-1,1]$, while $\Omega$ (longitude of the ascending node), $\omega$ (argument of periapsis) and 
+ the mean anomaly $\cal{M}$ 
+are all uniformly distributed within $[-\pi, \pi]$.
+ The impact parameter $b$ is randomly generated from a distribution uniform in
+ $b^2$  within the range $[0, b_{\rm max}]$. The maximum value $b_{\rm max}$, for each combination of  $M_{*,1}$, $M_{*,2}$, $M_p$, $a_p$ and $v_\infty$, is numerically pre-determined to ensure that all the impact parameters $b<b_{\rm max}$ that may lead to planet exchange are included in the scattering experiment.  
+\begin{figure*}
+\includegraphics[width=2\columnwidth]{letter-new-ae-01}\\
+\includegraphics[width=2\columnwidth]{letter-new-ae-1}\\
+ \includegraphics[width=2\columnwidth]{letter-new-ae}
+  \caption{The post scattering orbital separation and eccentricity of the planet after the swap onto the low-mass star, for three values of the relative velocity at infinity: $v_\infty=0.1$~km~s$^{-1}$ (top panel), $v_\infty=1$~km~s$^{-1}$ (middle panel) and $v_\infty=10$~km~s$^{-1}$ (bottom panel). 
+  The dashed lines indicate the relative distance $dr$ 
+  needed to obtain the orbital parameters of the planet in GJ~3512b for retrograde orbits (green) and prograde ones (orange).
+  Left: 2D probability distribution function (PDF) for the case $a_p=1$~AU and $e_p=0$. Right: the PDF of the orbital separation (top) and the eccentricity (bottom) for a range of $a_p$ with $e_p=0$. The observed parameters of GJ~3512b are also shown for reference. }
+ \label{fig:orbits}
+\end{figure*}
+
+
+If $N_{\rm tot}$ is the total number of scattering experiments, and $N_{\rm ex}$ the number of outcomes found to be planet swaps, then the cross section for this mechanism is \citep[e.g.][]{hut83}
+
+\begin{equation}
+\sigma_{\rm ex} = \pi b_{\rm max}^2\frac{N_{\rm ex}}{N_{\rm tot}}\,,
+\end{equation}
+with statistical error
+\begin{equation}
+\Delta\sigma_{\rm ex} = \pi b_{\rm max}^2\frac{\sqrt{N_{\rm ex}}}{N_{\rm tot}}\,.
+\end{equation}
+
+
+In the following, in order to investigate planet swaps as a mechanism to explain systems 
+such as GJ~3512, we specialize 
+our simulations to the following values:  $M_{*,1}=1M_\odot$, $M_{*,1}=0.1M_\odot$ and $M_p=M_{\rm Jup}$, and explore the dependence on $a_p$ (original orbital separation around $M_{*,1}$) and $v_\infty$, since these are not directly measured variables.
+
+The left panel of Fig.~\ref{fig:fitting} shows the cross-section calculated from the scattering experiments as a function of $v_\infty$ and for $a_p=1$~AU.  We parameterize our fit to these data as $\sigma_{\rm ex} =$ Cv$^{\alpha}$, where C and $\alpha$ are fitting parameters.  The best fit powerlaw to the numerical data is with $\alpha=-2.03$. The right panel of Fig.~\ref{fig:fitting} shows the linear relationship between $a_p$ and $\sigma_{\rm ex}$ from the scattering experiments with different values of $a_p$. 
+
+
+Figure~\ref{fig:rate} shows the
+exchange rate (per Hubble time) for the same mass values and $a_p=$~1AU, as a function of the 
+relative velocity at infinity $v_\infty$. The three curves show different values for the number density of stars in the local environment. Note that, while we show the full trend for generality, for virialized clusters the velocities and densities correlate, and hence real systems correspond to regions on those curves. 
+
+Additionally, we need to point out that these rates 
+should be considered as upper limits. Firstly, the scattering experiments are made with a $1\,M_\odot$ star interacting with a $0.1\,M_\odot$ star.
+While these are indeed very common, the interacting stars have a mass distribution, upon which the cross section depends.
+Second, if the star cluster dissolves after a fraction $f_{Hub}$ of a Hubble time, then the rates should be multiplied by $f_{Hub}$. Third (and most importantly), 
+other dynamical processes, such as planet ejections, compete with planet exchanges during close encounters, and this is a sensitive function of environment.  
+A full study of the relative rates of the various processes is deferred to follow up work (Wang et al. 2020, in prep).
+
+In the following, we will present the results
+of numerical experiments with three choices of the initial relative velocity: $v_\infty =0.1$~km~s$^{-1}$,
+$v_\infty =1$~km~s$^{-1}$
+and $v_\infty =10$~km~s$^{-1}$.
+These fully bracket the typical values
+of stars born in dense groups \citep{Binney1987,Adams2001}.
+
+
+
+
+\section{Post-scattering properties of the $M$-star/planet system}
+
+The orbital properties of the planet after being exchanged from the $G$ to the $M$-star are displayed in Fig.~\ref{fig:orbits}. The left panel shows the 2D kernel density distribution of the post-scattered semi-major axis $a_p^\prime$ and eccentricity $e_p^\prime$ of the  planet after the exchange, for a representative case with $a_p=1AU$ and $e_p=0$. 
+Along with the semi-major axis variation, 
+the figure shows the
+intrinsic high eccentricity produced from the dynamical interaction. During a planet swap, the planet can be transferred from the original $G$-star to the new $M$-star in both prograde ($M$-star flies by in the same direction of the planet orbit) and retrograde ($M$-star flies by in the opposite direction to the planet orbit) orbits. 
+
+{ Approximate relations for $a_p^\prime$ and $e_p^\prime$ are given by the equations (details in Wang et al. 2020, in prep.) 
+
+\begin{eqnarray}\label{eq:swap}
+e_p^\prime &\sim& \frac{drdv^2/G-(M_{*2}+M_p)}{M_{*2}+M_p}\\
+a_p^\prime &\sim& \frac{(M_{*2}+M_p)dr}{2(M_{*2}+M_p)-drdv^2/G}\,,
+\end{eqnarray}
+where  $dr$ and $dv$ are the relative position and velocity between the planet and the $M$-star at closest approach. The planet swap requires $0 \le e_p^\prime < 1$ and $a_p^\prime >0$, which limits the possible initial conditions that regulate the probability to achieve planet swap in each direction.} Our numerical experiments indicate that, for a setup with  $v_\infty=10$~km~s$^{-1}$, planet exchanges from retrograde orbits are strongly suppressed due to the large relative velocity between the planet and the $M$-star. Therefore, the distribution in the left bottom panel of Fig~\ref{fig:orbits} displays only one peak corresponding to the prograde orbits. A second peak starts to appear for $v_\infty=0.1$~km~s$^{-1}$ (top left panel).
+
+Eqs.(\ref{eq:swap}) and (5) can be combined by eliminating $drdv^2$ between the two, yielding a relation  between $e_p^\prime$ 
+and $a_p^\prime$ as a function of $dr$. The dashed lines in the left panels of Fig.~\ref{fig:orbits} show the typical $dr$ that leads to the orbital parameters of the planet in GJ~3512b post swap between the $G$ and $M$ stars for both prograde orbits (orange line) and retrograde ones (green line). 
+These values of $dr$ are entirely consistent with what expected from interactions in dense star environments.
+
+
+
+The right panels of Fig,\ref{fig:orbits} show the collapsed (1D) probability distribution functions for $a_p^\prime$ (top panel) 
+and $e_p^\prime$ (bottom panel) for a range of initial orbital separations $a_p$ of the planet, with $e_p=0$ in all cases. The distributions of $a_p^\prime$ and $e_p^\prime$  for $a_p=0.5,1$ and $2$ AU have an almost identical shape, which comes from integrating isotropically over all incoming directions corresponding to prograde orbits. 
+The center of the distribution shifts with $a_p$ due to the energy shift that is required to ionize the original planet orbit around the $G$-star. The distribution with $a_p=5$~AU,  for $v_\infty=10$~km~s$^{-1}$, where the retrograde channel is less suppressed, yields a more extended tail at high eccentricities. This is because the wider orbital separation gives a lower orbital velocity. Lower relative velocities can be achieved in the retrograde channel where the $M$-star and planet move in opposite directions. The key is to maximize the impulse imparted from the $M$-star to the planet, maximizing the energy and angular momentum exchanged.  This gives a wider range of possibilities  to satisfy the swap criteria that $0 \le e_p^\prime < 1$. The less suppressed retrograde channel,  which yields higher averaged $a_p^\prime$ and $e_p^\prime$ values, thus adds up to the high-end tail of these distributions.  
+
+
+\begin{figure}
+  \includegraphics[width=0.9\columnwidth]{letter-v}
+  \caption{Post-scattering relative velocity of the $M$ and  $G$ stars after the planet swap from the  $G$ to $M$ star, for the case 
+   $v_\infty=10$~km~s$^{-1}$.}
+ \label{fig:velocity}
+\end{figure}
+
+
+The post-scattering relative velocity distribution of the two stars,  after the $M$ star has  acquired the planet from the $G$ star during the dynamical
+interaction, is shown in Fig.~\ref{fig:velocity}
+for the case $v_\infty=10$~km~s$^{-1}$. For this high relative velocity at infinity, the post-scattering relative velocity remains of the same order of magnitude as the initial one, showing only a slight decrease for tighter
+captures.  The slight decrease comes from the binding energy shift. The average energy shift can be expressed as
+\begin{equation}\label{eq:shift}
+\langle \Delta E \rangle \propto \frac{-M_{*2}}{\langle a_p^\prime \rangle} - \frac{-M_{*1}}{\langle a_p \rangle }\propto \frac{M_{*1}-AM_{*2}}{\langle a_p \rangle}\,,
+\end{equation}
+where $\langle a_p \rangle /\langle a_p^\prime \rangle =A$ indicates the average semi-major axis shift with $A$ almost identical for $a_p=0.5,1$ and $2$ AU. The shifted binding energy will boost/decelerate the centre of mass velocity of the new $M$-star+planet system. For the specific setup studied here, as shown in the bottom right panel of Figure.~\ref{fig:orbits}, we have $1<A<10$. With $M_{*1}=1M_\odot$ and $M_{*2}=0.1M_\odot$, this yields $\langle \Delta E\rangle > 0$. Due to  energy conservation, the kinetic energy of the center of mass of the new star-planet system will decrease, which results in a reduction of $v_\infty$. As clearly shown in Eq.~(\ref{eq:shift}), smaller $a_p$ values yield larger energy shifts and a wider dispersion for the same values of 
+$M_{*,1}, M_{*,2}$ and
+ $A$. 
+
+For the two cases with smaller velocities  
+($v_\infty=0.1$~km~s$^{-1}$ and $v_\infty=1$~km~s$^{-1}$), the change in binding energy of the planet as it is swapped from the $1\,M_\odot$ star to the $0.1\,M_\odot$ flyby becomes
+comparable to or larger than the available kinetic energy in the system, and the two stars remain weakly bound (which is why we do not show their post-scattering relative velocity here). While we do not follow the long-term fate of these weakly bound stars (we are interested in the fate of the planet here), we note that in dense environments these binaries are likely to be eventually disrupted.
+
+For a direct comparison with observations, we note that the velocity of the low-mass star is reflective of the post-scattering
+velocity only for a relatively short time. After the host cluster dissolution, the captured planetary system will end up orbiting as an isolated object within the host G
+alaxy potential.  Hence, the observed velocity of the star will become on the order of the orbital velocity of its original host cluster, imposing only very high relative velocity encounters with other isolated stars.  Thus, the host cluster environment is, in our scenario, needed to ensure low relative velocity interactions, drastically increasing the capture probability per interaction. 
+
+
+
+
+
+
+\section{Summary}
+Motivated by the discovery of planetary systems with gas giants orbiting low-mass stars, which are not explained 
+by standard planet formation theories, here we have proposed a novel scenario of a dynamical origin:  The giant is born around a more standard Sun-like star, but gets then captured by a low-mass star during a close encounter. 
+
+We have quantified the occurrence rate of these events, and the statistical properties of the post-scattered systems, via 
+highly accurate direct $N$-body simulations, which yielded the (velocity-dependent) cross-section for planet exchange.
+For number densities $n_0\sim 10^3-10^4$~pc$^{-3}$, and
+velocities of $1$~km~s$^{-1}$
+as are typical of star clusters \citep{Adams2001},
+exchange rates can be as high as $\sim 0.1-1$ per Hubble time  for a given planet-hosting Sun-like system and an interloper low-mass star, making this mechanism potentially relatively common for stars born in groups.
+
+
+
+We find that, after the exchange, the
+distribution of planet eccentricity is weighed towards high values, whereas the
+  orbital separation  correlates with the initial one that the planet had around its host star, but the distribution is broad.
+  
+  
+  Our planet swap mechanism hence provides an alternative path to the formation of gas giants around small stars, and naturally predicts some of the observed properties, such as the high orbital eccentricity.
+
+
+\section*{Acknowledgments}
+
+%N.~W.~C.~L., D.~S.-~O., Y.~T. and H.~M. are grateful for the generous support of NASA grant number XXX. FIll THIS IN!!!
+N.~W.~C.~L. acknowledges the generous support of Fondecyt Iniciacion Grant \#11180005. 
+
+
+
+
+
+
+\bibliographystyle{aasjournal}
+\bibliography{biblio.bib}
+
+
+\end{document}

@@ -1,0 +1,108 @@
+We thank the referee for a very thoughtful and constructive report.
+We have addressed all of their comments and suggestions as described in detail below.
+
+
+REFEREE:
+1. Based on the analysis and the number density n and v_infinity
+chosen by the authors it appears that they expect the interaction to
+happen somewhere inside the core. However, mass segregation plays
+spoil-sport. G and M stars are not very massive and they do not
+populate the densest parts of the clusters. Thus, the interaction rate
+is expected to go down. The authors should make this clear in the
+text.
+
+AUTHORS:
+We have explicitly added this
+caviat to the discussion of the main  processes which can bring the rates down (second to last par. of Sec.2).
+
+REFEREE:
+2. It will be very interesting to factor in the n-v_infinity relation
+which the authors mention but do not take into account. I strongly
+encourage the authors to do this extra work. The way the authors have
+shown the rate of swap is misleading. In fact, what they have
+calculated is an upper limit of the cross-section for
+planet-swap. Converting it to a rate per Hubble time should have
+cluster mass function, their tidal disruption timescales, and their
+properties factored in at the least. Otherwise, it is very hard to
+know what this number means. I am afraid that a casual reader may
+grossly misinterpret this number and use this number
+inappropriately. I strongly urge the authors either to simply quote
+the swap cross-sections or do the extra work and provide a more
+meaningful rate per Hubble time.
+
+
+AUTHORS:
+We have explicitly quantified the n-v relation, and used it to calculate a more accurate number density (new Eqs. 4-5) and hence rate (new Eq. 7-8). We have accordingly modified Fig.2 to reflect this more accurate calculation.
+
+The referee is quite accurate that the way we had defined the rate of swap (per Hubble time) was misleading. As a matter of fact, the Hubble time was simply  meant to be used as a convenient unit of time, while the meaning of the equation for Gamma is that of rate per planetary system. As a matter of fact, our equation for the rate is the same as eq.(23) of the Fregeau et al. (2006) paper brought up to our attention by the referee, with f(v) being a delta function in our case. However, as we read the report, we realized that our use of the terminology 'per Hubble time" gave the impression that we rather meant a global rate over the actual Hubble time, and this would indeed have to be calculated by introducing the clusters mass function and their disruption time. 
+We have now reworded this throughout, making it clear that ours is a rate per planetary system (as in Fregeau et al. 2006); we also switched time units in the rate from Hubble time to Gyrs so that hopefully no further confusion will arise.
+
+
+REFEREE:
+3. Planet swap has been studied by several others in the past. Fregeau
+et al. 2006, ApJ, 640, 1086 is particularly relevant for this work. In
+Fregeau et al. it was clearly shown that planet exchange becomes
+efficient if v_infinity is between v_orb and v_c. For a
+M_Sun-M_Jupiter binary at 1 au separation, v_c~3 km/s and v_orb~30
+km/s. They also comment that this range includes most of the star
+clusters in the Milky Way. This is the same range of v_infinity used
+by the authors. It is therefore not surprising at all that planet
+exchange happens in star clusters. I strongly urge that the authors
+reference this paper and modify their discussion based on the
+understanding of the exchange process in the region of parameter space
+where v_c < v_infinity < v_orb.
+
+AUTHORS:
+We have added the reference of Fregeau et al. 2006, ApJ, 640, 1086 and updated the Fig 3 with v_infinity in different regimes.(v_infty < v_c; v_c < v_infty < v_orb; v_orb < v_infty). The corresponding text has been updated as well at the end of section 2 and in the middle of section3. Most of the parameter space regions we discussed in this letter are in the regime where v_c < v_infty < v_orb.
+
+We also made a comparison with Heggie et al. 1996(in hard binary regime) on the exchange cross section. The comparison is shown in the left panel of Fig.(1).
+
+REFEREE:
+4. The results shown in Fig. 4 are likely reflective of the original
+work by Heggie and Hut, which showed that the recoil velocity is
+proportional to pre-interaction v_orb where the proportionality
+constant is a function of the mass ratio of the perturber and the
+binary. It will be very interesting to see how the distributions look
+like in units of v_infinity'/v_orb_initial.
+
+AUTHORS:
+
+
+REFEREE:
+5. In all cases except v_infinity=10 km/s (bottom panel of Fig 3) it
+appears that the post-swap eccentricities follow a thermal
+distribution (as expected). The authors should confirm that this is
+true in the text. What is the reason for the excess at high-e for
+a_p=5 au? In all other cases the e_p' distributions appear very
+similar.
+
+
+AUTHORS:
+We have updated the Fig 3 with v_infty in different regimes. The thermal e-distribution has been added to each panel to indicate the agreement or differences. The corresponding discussion can be found in section 3.
+
+
+REFEREE:
+6. Planets in eccentric orbits can also be created via strong
+planet-planet scattering of giant planets. I encourage the authors to
+mention this in the introduction with references such as (but not
+limited to) Rasio & Ford 1996, Science, 274, 954; Chatterjee et
+al. 2008, ApJ, 686, 580; Juric & Tremaine 2008, ApJ, 686, 603; Beauge
+& Nesvorny 2012, ApJ, 751, 2. The authors can further justify that
+while forming one giant planet around a M star is hard, planet-planet
+scattering requires multiple giant planets.
+
+AUTHORS:
+All those references as well as the point made by the referee have been included in the introduction, between the main text and footnote 1.
+
+
+REFEREE:
+7. Fig. 3 shows that the post-swap a_p depends on the pre-swap
+a_p. This is well understood based on energy arguments. While the
+authors make similar arguments using Eq. 4 and 5, their details are
+not shown. Perhaps it is better to argue without using these equations
+and present these equations in the paper being prepared by Wang et
+al.?
+
+
+AUTHORS:
+The Fig.3 has been changed based on comment 5. We have changed the discussion of the a_p' based on the scattering regimes instead of Eq.4 and 5. However, Eq. 4 and 5 are used to 

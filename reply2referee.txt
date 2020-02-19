@@ -1,5 +1,6 @@
 We thank the referee for a very thoughtful and constructive report.
-We have addressed all of their comments and suggestions as described in detail below.
+We have addressed all of their comments and suggestions as described in detail below. All the new text is clearly marked in red to facilitate
+its identification.
 
 
 REFEREE:
@@ -13,7 +14,7 @@ text.
 
 AUTHORS:
 We have explicitly added this
-caviat to the discussion of the main  processes which can bring the rates down (second to last par. of Sec.2).
+caveat to the discussion of the main  processes which can bring the rates down (second to last par. of Sec.2).
 
 REFEREE:
 2. It will be very interesting to factor in the n-v_infinity relation
@@ -32,9 +33,9 @@ meaningful rate per Hubble time.
 
 
 AUTHORS:
-We have explicitly quantified the n-v relation, and used it to calculate a more accurate number density (new Eqs. 4-5) and hence rate (new Eq. 7-8). We have accordingly modified Fig.2 to reflect this more accurate calculation.
+We have explicitly quantified the n-v relation, and used it to calculate a more accurate number density (new Eqs. 4-5) and hence rate (new Eq. 7-8). We have accordingly modified Fig.2 to reflect these more accurate calculation.
 
-The referee is quite accurate that the way we had defined the rate of swap (per Hubble time) was misleading. As a matter of fact, the Hubble time was simply  meant to be used as a convenient unit of time, while the meaning of the equation for Gamma is that of rate per planetary system. As a matter of fact, our equation for the rate is the same as eq.(23) of the Fregeau et al. (2006) paper brought up to our attention by the referee, with f(v) being a delta function in our case. However, as we read the report, we realized that our use of the terminology 'per Hubble time" gave the impression that we rather meant a global rate over the actual Hubble time, and this would indeed have to be calculated by introducing the clusters mass function and their disruption time. 
+The referee is quite accurate that the way we had defined the rate of swap (per Hubble time) was misleading. As a matter of fact, the Hubble time was simply  meant to be used as a convenient unit of time, while the meaning of the equation for Gamma is that of rate per planetary system.   In fact, our equation for the rate is the same as eq.(23) of the Fregeau et al. (2006) paper brought up to our attention by the referee, with f(v) being a delta function in our case. However, as we read the report, we realized that our use of the terminology "per Hubble time" gave the impression that we rather meant a global rate over the actual Hubble time, and this would indeed have to be calculated by introducing the clusters mass function and their disruption time. 
 We have now reworded this throughout, making it clear that ours is a rate per planetary system (as in Fregeau et al. 2006); we also switched time units in the rate from Hubble time to Gyrs so that hopefully no further confusion will arise.
 
 
@@ -53,9 +54,18 @@ understanding of the exchange process in the region of parameter space
 where v_c < v_infinity < v_orb.
 
 AUTHORS:
-We have added the reference of Fregeau et al. 2006, ApJ, 640, 1086 and updated the Fig 3 with v_infinity in different regimes.(v_infty < v_c; v_c < v_infty < v_orb; v_orb < v_infty). The corresponding text has been updated as well at the end of section 2 and in the middle of section3. Most of the parameter space regions we discussed in this letter are in the regime where v_c < v_infty < v_orb.
+The reference Fregeau et al. (2006) is indeed very
+relevant to our work; being new to this field of research our group was not aware of it, and we appreciate the referee to have brought it up to our attention. It has now been widely cited in our paper.
+Following their analysis and the suggestion of the referee,
+we have updated Fig 3 with v_infinity in different regimes (v_infty < v_c; v_c < v_infty < v_orb; v_orb < v_infty). The corresponding text has been updated as well (see last par. of sec.2 and 2nd and 3rd par.  of sect. 3). Most of the parameter space we discuss in this letter is in the regime where v_c < v_infty < v_orb. However,
+in order to see the effects of a different regime, we replaced the case
+of v_infty = 10.1 km/s of the previous version with the higher value of 13.4 km/s which, for a_p=5AU is in the regime v_infty > v_orb.
 
-We also made a comparison with Heggie et al. 1996(in hard binary regime) on the exchange cross section. The comparison is shown in the left panel of Fig.(1).
+Additionally, as a reference, we also made a comparison with Heggie et al. 1996 in the left panel of Fig.1 for the  exchange cross section. Note that their analytical expressions are for v_infty < v_c, 
+while our numerical results are in the intermediate regime of v_c < v_infty < v_orb.  
+
+Last, in reading the Fregeau's paper, we realized that they suggest the swap mechanism for a pulsar system. Albeit not requested by the referee, we felt that we should explicitly mention this result of theirs in our paper, since it is a similar idea to ours. We did so in the introduction.
+
 
 REFEREE:
 4. The results shown in Fig. 4 are likely reflective of the original
@@ -66,7 +76,18 @@ binary. It will be very interesting to see how the distributions look
 like in units of v_infinity'/v_orb_initial.
 
 AUTHORS:
+We do find a direct proportionality between the recoil velocity 
+and v_orb in our simulations; however, this is for the case
+of planet ejection, which we are studying in the more general
+Wang et al. (2020) paper in preparation (about to be submitted).
+For the case of exchange which is the focus of this letter,
+we don't find such a proportionality (we have included with the report a figure which shows the requested plot under 'supplemental material' in the submission site). We understand our findings
+for the recoil velocity with the help of Eq.(9) in our paper: the recoil kinetic energy (and hence velocity) results from the change in binding energy of the planet during the exchange, and this change is not directly proportional to v_orb (see e.g. the more general
+expression given in Eq. 4.7 of Hut (1983, ApJ, 268, 342).
 
+However, if we misinterpreted this comment of the referee, please
+let us know and we will be happy to iterate again to his/her
+satisfaction.
 
 REFEREE:
 5. In all cases except v_infinity=10 km/s (bottom panel of Fig 3) it
@@ -78,7 +99,9 @@ similar.
 
 
 AUTHORS:
-We have updated the Fig 3 with v_infty in different regimes. The thermal e-distribution has been added to each panel to indicate the agreement or differences. The corresponding discussion can be found in section 3.
+The referee is correct, and to make the different results
+in different regimes more apparent, we have replaced the 10km/s case
+with a 13km/s one (as already mentioned in reply to point 3). For a_p=5AU, this is fully in the soft regime, and differences with the other cases are more apparent.  The corresponding discussion can be found in sect. 3.
 
 
 REFEREE:
@@ -103,6 +126,7 @@ not shown. Perhaps it is better to argue without using these equations
 and present these equations in the paper being prepared by Wang et
 al.?
 
-
 AUTHORS:
-The Fig.3 has been changed based on comment 5. We have changed the discussion of the a_p' based on the scattering regimes instead of Eq.4 and 5. However, Eq. 4 and 5 are used to 
+We followed the suggestion of the referee in not using equations 
+derived in another paper in preparation  to explain the results of Fig.3. Hence, we have removed the (previous) Eq. 4 and 5
+and changed the discussion of the a_p' distribution based on energy arguments (new discussion in Sec.3). 
